@@ -6,7 +6,7 @@ namespace Assets.Scripts.Data
 {
     public class PlayerData
     {
-        
+
     }
 
     public class Hero
@@ -18,6 +18,13 @@ namespace Assets.Scripts.Data
     {
         public EquipmentType type;
         public int Level;
-        public 
+        public EquipmentQuality quality;
+
+        public int Power => GetPower();
+
+        private int GetPower()
+        {
+            return 0;
+        }
     }
 }
