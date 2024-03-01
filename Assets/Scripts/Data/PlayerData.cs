@@ -6,7 +6,7 @@ namespace Assets.Scripts.Data
 {
     public class PlayerData
     {
-
+        public List<Hero> Heroes = new();
     }
 
     public class Hero
