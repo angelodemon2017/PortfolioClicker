@@ -45,29 +45,30 @@
                 result = result.Insert(pointIndex, ".");
             }
 
-            int markIndex = tempRank / 3;
+//            int markIndex = (tempRank - 1) / 3;
 
-            result = $"{result}{GetRank(markIndex)}";
+            result = $"{result}{GetRank(tempRank)}";
 
             return result;
         }
 
-        private string GetRank(int markIndex)
+        private string GetRank(int tempRank)
         {
+            var markIndex = (tempRank - 1) / 3;
+            //            int pointIndex = tempRank % 3;
+
+            if (markIndex == 0)
+            {
+                return $"{_markChars[0]}";
+            }
+
             string resultMark = "";
 
-            if (markIndex > 0)
+            while (markIndex > 0)
             {
-                while (markIndex > 0)
-                {
-                    int remainder = markIndex % _markChars.Length;
-                    resultMark = resultMark.Insert(0, $"{_markChars[remainder]}");
-                    markIndex /= _markChars.Length;
-                }
-            }
-            else
-            {
-                resultMark = $"{_markChars[0]}";
+                int remainder = (markIndex - 1) % _markChars.Length;
+                resultMark = resultMark.Insert(0, $"{_markChars[remainder]}");
+                markIndex = (markIndex - 1) / _markChars.Length;
             }
 
             return resultMark;
