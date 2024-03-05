@@ -45,8 +45,6 @@
                 result = result.Insert(pointIndex, ".");
             }
 
-//            int markIndex = (tempRank - 1) / 3;
-
             result = $"{result}{GetRank(tempRank)}";
 
             return result;
