@@ -53,7 +53,6 @@
         private string GetRank(int tempRank)
         {
             var markIndex = (tempRank - 1) / 3;
-            //            int pointIndex = tempRank % 3;
 
             if (markIndex == 0)
             {
