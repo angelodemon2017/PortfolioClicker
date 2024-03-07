@@ -9,7 +9,6 @@ namespace IdleCashSystem.Test
         public IdleCash rhs;
         public IdleCash result;
 
-
         private void OnValidate()
         {
             result = lhs + rhs;
